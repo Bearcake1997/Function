@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // arguments default
+        // function getAge() {
+        //     let birthYear = arguments[0];
+        // }
+        //prompt
+        function calAge(birthYear) {
+            const now = new Date();
+            let currentYear = now.getFullYear();
+            let yourAge = currentYear - birthYear;
+            //return yourAge;
+            //console.log("Tuổi của bạn là: " + yourAge);
+            document.write("Tuổi của bạn iu là: " + yourAge);
+            // hoặc có thể return
+        }
+        let yourBirthYear = parseInt(prompt("Nhập vào năm sinh của bạn: "));
+        calAge(yourBirthYear);
+        //return function
+        // function isEven(number) { // ktra so chan
+        //     if (number % 2 == 0) {
+        //         return true;
+        //     } else {
+        //         return false;
+        //     }
+        //     return number % 2 == 0;
+        // }
+        // function isOdd(number) { //ktra so le
+        //     if (number % 2 != 0) {
+        //         return true;
+        //     }
+        // }
+
+    </script>
+</body>
+</html>

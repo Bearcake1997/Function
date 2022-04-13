@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReUse Code</title>
+</head>
+<body>
+    <script>
+        let sum = 0;
+        for (let i=1;i<=10;i++) sum +=i;
+        console.log("Tổng từ 1 tới 10 là " + sum);
+
+        function sumRange(from,to) {
+            let sum = 0;
+            for (let i = from; i <= to; i++) {
+                sum += i;
+            }
+            console.log("Tổng từ " + from + " đến " + to + " là: " + sum);
+        }
+        sumRange(7,12);
+        sumRange(12,22);
+        sumRange(17,20);
+
+    </script>
+</body>
+</html>
