@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="temp">Nhiệt độ nhập vào:</label>
+    <input type="number" id="temp" placeholder="Mời bạn nhập vào nhiệt độ cần chuyển đổi">
+    <br/>
+    <p><span id="inKetQua"></span>Độ C tương đương </p>
+    <script>
+        function chuyenDoi(number) {
+            let result = (number -32)/1.8;
+            document.getElementById("inKetQua") = result;
+        }
+    </script>
+</body>
+</html>

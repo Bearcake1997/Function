@@ -1,30 +1,26 @@
 // Lấy thẻ từ html sang javascript để xử lý
 const txtMaSV = document.getElementById('txtMaSV');
-// Lấy thẻ từ html sang javascript để xử lý
 const txtTen = document.getElementById('txtTen');
-// Lấy thẻ từ html sang javascript để xử lý
 const txtTuoi = document.getElementById('txtTuoi');
-// Lấy thẻ từ html sang javascript để xử lý
 const txtDiaChi = document.getElementById('txtDiaChi');
-// Lấy thẻ từ html sang javascript để xử lý
-const txtDiemToan = document.getElementById('txtDiemToan');
-// Lấy thẻ từ html sang javascript để xử lý
-const txtDiemVan = document.getElementById('txtDiemVan');
-// Lấy thẻ từ html sang javascript để xử lý
+const txtDiemT = document.getElementById('txtDiemT');
+const txtDiemV = document.getElementById('txtDiemV');
+const txtDiemA = document.getElementById('txtDiemA');
+const txtHanhKiem = document.getElementById('txtHanhKiem');
 const hienThiSinhVien = document.getElementById('hienThiSinhVien');
+
+// console.log(txtDiemA);
 
 // tạo biến giúp lưu giá trị của từng sinh viên
 let MaSV;
-// tạo biến giúp lưu giá trị của từng sinh viên
 let Ten;
-// tạo biến giúp lưu giá trị của từng sinh viên
 let Tuoi;
-// tạo biến giúp lưu giá trị của từng sinh viên
 let DiaChi;
-// tạo biến giúp lưu giá trị của từng sinh viên
-let DiemToan;
-// tạo biến giúp lưu giá trị của từng sinh viên
-let DiemVan;
+let DiemT;
+let DiemV;
+let DiemA;
+let HanhKiem;
+
 // tạo mảng lưu lại những sinh viên đã nhập
 let danhSachSinhVien = [];
 
@@ -32,31 +28,32 @@ let danhSachSinhVien = [];
 txtMaSV.addEventListener('keyup', function () {
   MaSV = txtMaSV.value;
 })
-// thêm sự kiện keyup để lấy giá trị từ các thẻ html khi sự kiện xẩy ra
 txtTen.addEventListener('keyup', function () {
   Ten = txtTen.value;
 })
-// thêm sự kiện keyup để lấy giá trị từ các thẻ html khi sự kiện xẩy ra
 txtTuoi.addEventListener('keyup', function () {
   Tuoi = txtTuoi.value;
 })
-// thêm sự kiện keyup để lấy giá trị từ các thẻ html khi sự kiện xẩy ra
 txtDiaChi.addEventListener('keyup', function () {
   DiaChi = txtDiaChi.value;
 })
-// thêm sự kiện keyup để lấy giá trị từ các thẻ html khi sự kiện xẩy ra
-txtDiemToan.addEventListener('keyup', function () {
-  DiemToan = txtDiemToan.value;
+txtDiemT.addEventListener('keyup', function () {
+  DiemT = txtDiemT.value;
 })
-// thêm sự kiện keyup để lấy giá trị từ các thẻ html khi sự kiện xẩy ra
-txtDiemVan.addEventListener('keyup', function () {
-  DiemVan = txtDiemVan.value;
+txtDiemV.addEventListener('keyup', function () {
+  DiemV = txtDiemV.value;
+})
+txtDiemA.addEventListener('keyup', function () {
+  DiemA = txtDiemA.value;
+})
+txtHanhKiem.addEventListener('keyup', function () {
+  HanhKiem = txtHanhKiem.value;
 })
 
 
 // hàm giúp thêm sinh viên vào mảng danhSachSinhVien
 function themSinhVien() {
-  let sinhVien = new Student(MaSV, Ten, Tuoi, DiaChi, DiemToan, DiemVan);
+  let sinhVien = new Student(MaSV, Ten, Tuoi, DiaChi, DiemT, DiemV, DiemA, HanhKiem);
   danhSachSinhVien.push(sinhVien);
   hienThiSinhVien.innerHTML = '';
   danhSachSinhVien.forEach(function (sinhVien) {
@@ -67,34 +64,29 @@ function themSinhVien() {
 
 // đối tượng sinh viên khai báo bằng class
 class Student {
-
-  // thuộc sinh của sinh viên
-  maSV;
-  // thuộc sinh của sinh viên
+  maSV; // thuộc tính của mấy đứa sinh viên
   ten;
-  // thuộc sinh của sinh viên
   tuoi;
-  // thuộc sinh của sinh viên
   diaChi;
-  // thuộc sinh của sinh viên
-  diemToan;
-  // thuộc sinh của sinh viên
-  diemVan;
-
-
+  diemT;
+  diemV;
+  diemA;
+  hanhKiem;
   // constructor giúp lấy giá trị từ bên ngoài vào để khởi tạo sinh viên
-  constructor(maSV, ten, tuoi, diaChi, diemToan, diemVan) {
+  constructor(maSV, ten, tuoi, diaChi, diemT, diemV, diemA, hanhKiem) {
     this.maSV = maSV;
     this.ten = ten;
     this.tuoi = tuoi;
     this.diaChi = diaChi;
-    this.diemToan = diemToan;
-    this.diemVan = diemVan;
+    this.diemT = diemT;
+    this.diemV = diemV;
+    this.diemA = diemA;
+    this.hanhKiem = hanhKiem;
   }
 
   // hàm giúp hiện thị sinh viên theo dạng : 001 - Nguyen Van A - 20 - Hue - 10 - 10
   hienThi() {
-    return `${this.maSV} - ${this.ten} - ${this.tuoi} - ${this.diaChi} - ${this.diemToan} - ${this.diemVan}` + `<br>`;
+    return `${this.maSV} - ${this.ten} - ${this.tuoi} - ${this.diaChi} - ${this.diemT} - ${this.diemV} - ${this.diemA} - ${this.hanhKiem}` + `<br>`;
   }
 
 }

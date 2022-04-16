@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feet and Meter</title>
+</head>
+
+<body>
+    <h1>Mệt quáaaaaaaaaaaaa</h1>
+    <input type="text" name="" id="feets" placeholder="Feet to Meters">
+    <button type="button" onclick="showMeter();">Exchange and Display</button>
+    <div id="result"></div>
+    <br/>
+    <hr>
+    <br/>
+    <input type="text" name="" id="meters" placeholder="Meter to Feet">
+    <button type="button" onclick="showFeet();">Exchange and Display</button>
+    <div id="result2"></div>
+    <script>
+        function feetToMeter(f) {
+            return (f * 0.305);
+        }
+        function meterToFeet(m) {
+            return (m * 3.279);
+        }
+        function showMeter() {
+            let feetValue = document.getElementById("feets").value;
+            let meterValue = feetToMeter(feetValue);
+            document.getElementById("result").innerHTML = meterValue;
+        }
+        function showFeet() {
+            let meterValue2 = document.getElementById("meters").value;
+            let feetValue2 = meterToFeet(meterValue2);
+            document.getElementById("result2").innerHTML = feetValue2;
+        }
+    </script>
+</body>
+</html>
